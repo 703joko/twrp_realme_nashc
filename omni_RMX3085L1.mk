@@ -10,6 +10,8 @@ $(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+PRODUCT_RELEASE_NAME := RMX3085L1
+
 # Inherit from RMX3085L1 device
 $(call inherit-product, device/realme/RMX3085L1/device.mk)
 
@@ -18,8 +20,8 @@ $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := RMX3085L1
-PRODUCT_NAME := omni_RMX3085L1
+PRODUCT_DEVICE := $(PRODUCT_RELEASE_NAME)
+PRODUCT_NAME := omni_$(PRODUCT_RELEASE_NAME)
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX3085
 PRODUCT_MANUFACTURER := realme
